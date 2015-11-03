@@ -1,0 +1,4 @@
+Z:\wmortl\Documents\Code\MSNgram\MSNgram\bin\Debug\MSNgram.dll
+Z:\wmortl\Documents\Code\MSNgram\MSNgram\bin\Debug\MSNgram.pdb
+Z:\wmortl\Documents\Code\MSNgram\MSNgram\obj\Debug\MSNgram.dll
+Z:\wmortl\Documents\Code\MSNgram\MSNgram\obj\Debug\MSNgram.pdb

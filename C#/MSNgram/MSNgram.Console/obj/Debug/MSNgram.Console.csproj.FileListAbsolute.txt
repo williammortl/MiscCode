@@ -1,0 +1,8 @@
+Z:\wmortl\Documents\Code\MSNgram\MSNgram.Console\bin\Debug\MSNgram.Console.exe.config
+Z:\wmortl\Documents\Code\MSNgram\MSNgram.Console\bin\Debug\MSNgram.Console.exe
+Z:\wmortl\Documents\Code\MSNgram\MSNgram.Console\bin\Debug\MSNgram.Console.pdb
+Z:\wmortl\Documents\Code\MSNgram\MSNgram.Console\bin\Debug\MSNgram.dll
+Z:\wmortl\Documents\Code\MSNgram\MSNgram.Console\bin\Debug\MSNgram.pdb
+Z:\wmortl\Documents\Code\MSNgram\MSNgram.Console\obj\Debug\MSNgram.Console.csprojResolveAssemblyReference.cache
+Z:\wmortl\Documents\Code\MSNgram\MSNgram.Console\obj\Debug\MSNgram.Console.exe
+Z:\wmortl\Documents\Code\MSNgram\MSNgram.Console\obj\Debug\MSNgram.Console.pdb
