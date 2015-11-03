@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5a75d71f-d6fb-420c-9cbf-46fb94a9e318" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://weblm.research.microsoft.com/wiab.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="wiab.disco" MetadataType="Disco" ID="ee0337e7-7399-46b9-b32b-03a16a7cf143" SourceId="1" SourceUrl="http://weblm.research.microsoft.com/wiab.svc?disco" />
+    <MetadataFile FileName="WiabService.wsdl" MetadataType="Wsdl" ID="ee076cd6-eabe-4458-aee0-e61fd4536d21" SourceId="1" SourceUrl="http://weblm.research.microsoft.com/wiab.svc?wsdl" />
+    <MetadataFile FileName="wiab.xsd" MetadataType="Schema" ID="23c965e3-258f-4453-a78f-504865d643a7" SourceId="1" SourceUrl="http://weblm.research.microsoft.com/wiab.svc?xsd=xsd0" />
+    <MetadataFile FileName="wiab1.xsd" MetadataType="Schema" ID="6ffc7000-716b-4b63-be59-9298a7d9b13e" SourceId="1" SourceUrl="http://weblm.research.microsoft.com/wiab.svc?xsd=xsd1" />
+    <MetadataFile FileName="wiab2.xsd" MetadataType="Schema" ID="e983c458-6eeb-4f2f-a8a1-f9ef709540f8" SourceId="1" SourceUrl="http://weblm.research.microsoft.com/wiab.svc?xsd=xsd2" />
+    <MetadataFile FileName="wiab3.xsd" MetadataType="Schema" ID="b9c94bdc-dd0d-48a0-8002-ca206ee77cc7" SourceId="1" SourceUrl="http://weblm.research.microsoft.com/wiab.svc?xsd=xsd3" />
+    <MetadataFile FileName="wiab.wsdl" MetadataType="Wsdl" ID="81c0b5d6-504f-4e15-a92c-18beeb596394" SourceId="1" SourceUrl="http://weblm.research.microsoft.com/wiab.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/research/2011/08/wiab" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/research/2011/08/wiab" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://weblm.research.microsoft.com/wiab.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://weblm.research.microsoft.com/wiab.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/research/2009/10/webngram/fanout" />
+  <xs:element name="GetModels">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetModelsResult" nillable="true" type="q1:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModelsForWordBreaker">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModelsForWordBreakerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetModelsForWordBreakerResult" nillable="true" type="q2:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModelsForPhraseBreaker">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModelsForPhraseBreakerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetModelsForPhraseBreakerResult" nillable="true" type="q3:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProbability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="authorizationToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modelUrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="phrase" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProbabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetProbabilityResult" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProbabilities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="authorizationToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modelUrn" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="phrases" nillable="true" type="q4:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProbabilitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetProbabilitiesResult" nillable="true" type="q5:ArrayOffloat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConditionalProbability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="authorizationToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modelUrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="phrase" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConditionalProbabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetConditionalProbabilityResult" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConditionalProbabilities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="authorizationToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modelUrn" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="phrases" nillable="true" type="q6:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConditionalProbabilitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetConditionalProbabilitiesResult" nillable="true" type="q7:ArrayOffloat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Generate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="authorizationToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modelUrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="phraseContext" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maxN" type="xs:int" />
+        <xs:element minOccurs="0" name="cookie" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/research/2009/10/webngram/fanout" minOccurs="0" name="GenerateResult" nillable="true" type="q8:TokenSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WordBreak">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="authorizationToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modelUrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maxCandidates" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WordBreakResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/research/2009/10/webngram/fanout" minOccurs="0" name="WordBreakResult" nillable="true" type="q9:WordBreakerResultSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhraseBreak">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="authToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modelUrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maxPhraseLength" type="xs:int" />
+        <xs:element minOccurs="0" name="allowSinglePhrase" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhraseBreakResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PhraseBreakResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhraseBreakTree">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="authToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modelUrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maxPhraseLength" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhraseBreakTreeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PhraseBreakTreeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
