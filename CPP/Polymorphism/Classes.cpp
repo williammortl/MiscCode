@@ -6,6 +6,8 @@
 #include "Classes.h"
 #include <iostream>
 
+
+
 /*
  *
  * Namespaces
@@ -14,12 +16,13 @@
 using namespace std;
 using namespace WMM;
 
+
+
 /*
  *
  * Class method definitions
  *
  */
- 
 // base / super class
 int A::GetNumberConcrete(void)
 {

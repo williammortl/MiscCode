@@ -6,6 +6,8 @@
 #include "Classes.h"
 #include <iostream>
 
+
+
 /*
  *
  * Namespaces
@@ -14,6 +16,14 @@
 using namespace std;
 using namespace WMM;
 
+
+
+/*
+ *
+ *	Functions
+ *
+ */
+// main function
 int main()
 {
 
