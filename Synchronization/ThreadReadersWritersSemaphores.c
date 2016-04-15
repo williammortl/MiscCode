@@ -121,16 +121,8 @@ void* WriterFunction(void* pvData)
 	while(TRUE)
 	{
 
-		// mutex around write
-		sem_wait(&_semRead);
-		sem_wait(&_semWrite);
-
 		// write!
 		WriteFile((const char *)&szData, pszNumber);
-
-		// end mutex
-		sem_post(&_semWrite);
-		sem_post(&_semRead);
 
 		// sleep this thread a tick
 		usleep(0);
@@ -150,29 +142,9 @@ void* ReaderFunction(void* pvData)
 	while(TRUE)
 	{
 
-		// mutex around read
-		sem_wait(&_semRead);
-		sem_wait(&_semMutex);
-		_nReadCount++;
-		if (_nReadCount == 1)
-		{
-			sem_wait(&_semWrite);
-		}
-		sem_post(&_semMutex);
-		sem_post(&_semRead);
-
 		// clear buffer and read!
 		memset(&szData, '\0', LEN_FILE + 1);
 		ReadFile((char *)&szData, pszNumber);
-
-		// end mutex
-		sem_wait(&_semMutex);
-		_nReadCount--;
-		if (_nReadCount == 0)
-		{
-			sem_post(&_semWrite);
-		}
-		sem_post(&_semMutex);
 
 		// sleep this thread a tick
 		usleep(0);
@@ -194,6 +166,10 @@ void WriteFile(const char * pszBuffer, char * pszNumber)
 	// var init
 	int i;
 	int nLenPsz = strlen(pszBuffer);
+
+	// mutex around write
+	sem_wait(&_semRead);
+	sem_wait(&_semWrite);
 
 	// append to buffer and print
 	printf("\r\n\r\n-------------------------------\r\nSTART WRITING: %s\r\n-------------------------------\r\n", pszNumber);
@@ -220,6 +196,10 @@ void WriteFile(const char * pszBuffer, char * pszNumber)
 	}
 	printf("\r\n\r\n%s File buffer after write:\r\n%s", pszNumber, _szFileBuffer);
 	printf("\r\n\r\n-------------------------------\r\nSTOP WRITING: %s\r\n-------------------------------\r\n", pszNumber);
+
+	// end mutex
+	sem_post(&_semWrite);
+	sem_post(&_semRead);
 }
 
 void ReadFile(char * pszBuffer, char * pszNumber)
@@ -228,6 +208,17 @@ void ReadFile(char * pszBuffer, char * pszNumber)
 	// var init
 	int i;
 	int nLenBuffer = strlen(_szFileBuffer);
+
+	// mutex around read
+	sem_wait(&_semRead);
+	sem_wait(&_semMutex);
+	_nReadCount++;
+	if (_nReadCount == 1)
+	{
+		sem_wait(&_semWrite);
+	}
+	sem_post(&_semMutex);
+	sem_post(&_semRead);
 
 	// read data back into buffer
 	printf("\r\n\r\n-------------------------------\r\nSTART READING: %s\r\n-------------------------------\r\n", pszNumber);
@@ -243,4 +234,13 @@ void ReadFile(char * pszBuffer, char * pszNumber)
 	printf("\r\n\r\n%s File buffer read:\r\n%s", pszNumber, _szFileBuffer);
 	printf("\r\n\r\n%s Returned buffer after read:\r\n%s", pszNumber, pszBuffer);
 	printf("\r\n\r\n-------------------------------\r\nSTOP READING: %s\r\n-------------------------------\r\n", pszNumber);
+
+	// end mutex
+	sem_wait(&_semMutex);
+	_nReadCount--;
+	if (_nReadCount == 0)
+	{
+		sem_post(&_semWrite);
+	}
+	sem_post(&_semMutex);
 }
