@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
+using WCFExample.Logging;
 
 namespace WCFExample.WCFLibrary
 {
@@ -21,10 +17,7 @@ namespace WCFExample.WCFLibrary
             {
                 throw new ArgumentNullException("composite");
             }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
+            composite.StringValue += (composite.BoolValue == true) ? " - you sent true" : " - you sent false";
             return composite;
         }
     }
